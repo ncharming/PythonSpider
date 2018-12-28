@@ -23,6 +23,7 @@ def zhushou_crawler(name):
     soup = BeautifulSoup(data.text, 'lxml')
     title = soup.select(
         'body > div.warp > div.main > div > ul > li > dl > dd > h3 > a')[0].get_text()
+    #在网页指定一个应用，右键检查元素，找到「下载」，然后提取元素的‘路径’
     times = soup.select(
         'body > div.warp > div.main > div > ul > li > div > div.sdlft > p.downNum')[0].get_text()[:-2]
     print('在360助手上，'+title+'下载量为：'+times)
